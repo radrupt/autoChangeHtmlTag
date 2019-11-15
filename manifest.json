@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "change html tag",
+  "version": "0.1",
+  "description": "改变html里标签名字",
+  "icons": {
+    "16": "images/memory-16.png",
+    "128": "images/memory-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "http://*/",
+    "https://*/"
+  ],
+  "content_scripts": [
+		{
+			"matches": [
+        "*://im.dingtalk.com/*"
+      ],
+      "all_frames": true,
+			"js": ["js/content.js"],
+			"run_at": "document_start"
+		}
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
