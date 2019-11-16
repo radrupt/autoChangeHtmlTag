@@ -10,16 +10,24 @@ function init() {
 				list.forEach(
 					v => {
 						if(!/^<a/.test(v.parentNode.innerHTML)) {
-							v.parentNode.innerHTML = v.parentNode.innerHTML.replace(/^<div/, '<a').replace(/div>$/, 'a>')
+							v.parentNode.innerHTML = v.parentNode.innerHTML.replace(/^<div/, '<a')
 						}
 					}
 				)
 			}else if(host === 'www.teambition.com') {
-				const list = document.querySelectorAll('.task-infos')
+				let list = document.querySelectorAll('.task-infos')
 				list.forEach(
 					v => {
 						if(!/<a class="task-infos"/.test(v.parentNode.innerHTML)) {
-							v.parentNode.innerHTML = v.parentNode.innerHTML.replace(/<div class="task-infos"/, '<a class="task-infos"').replace(/<\/div><span/, '</a><span')
+							v.parentNode.innerHTML = v.parentNode.innerHTML.replace(/<div class="task-infos"/, '<a class="task-infos"')
+						}
+					}
+				)
+				list = document.querySelectorAll('.kanban-droppable-bucket-cards')
+				list.forEach(
+					v => {
+						if(!/<div class="kanban-droppable-bucket-cards/.test(v.parentNode.innerHTML)) {
+							v.parentNode.innerHTML = v.parentNode.innerHTML.replace(/<div class="kanban-droppable-bucket-cards/, '<a class="kanban-droppable-bucket-cards')
 						}
 					}
 				)
