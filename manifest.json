@@ -17,7 +17,8 @@
   "content_scripts": [
 		{
 			"matches": [
-        "*://im.dingtalk.com/*"
+        "*://im.dingtalk.com/*",
+        "*://*.teambition.com/*"
       ],
       "all_frames": true,
 			"js": ["js/content.js"],
